@@ -1,0 +1,37 @@
+{
+  "name": "Luma Learner",
+  "points": 85,
+  "xp": 175,
+  "level": 2,
+  "title": "Chaos Slayer",
+  "streaks": {
+    "daily": 0,
+    "focus": 0,
+    "noFail": 0,
+    "combo": 1
+  },
+  "badges": [
+    "First Light"
+  ],
+  "titlesUnlocked": [
+    "Productivity Goblin",
+    "Focus Witch",
+    "Chaos Slayer"
+  ],
+  "avatarMood": "waving",
+  "recentWins": [
+    "Completed: Hello World",
+    "Completed: Welcome to LumaTasks"
+  ],
+  "settings": {
+    "soundEnabled": true,
+    "playMode": true
+  },
+  "focusSession": null,
+  "stats": {
+    "tasksCompleted": 2,
+    "taskVelocity": 2,
+    "completionRate": 40
+  },
+  "nextLevelXp": 1080
+}

@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      "id": "166432dd-3e83-414e-bc0b-b9ef14757f4a",
+      "title": "Hello World",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "normal",
+      "color": "sage",
+      "dueAt": "2026-04-13T11:38",
+      "locked": false,
+      "createdAt": "2026-04-13T06:37:54.021Z",
+      "updatedAt": "2026-04-13T06:37:57.833Z"
+    },
+    {
+      "id": "seed-1",
+      "title": "Welcome to LumaTasks",
+      "notes": "Pull the lamp string to enter Play Mode.",
+      "list": "My Day",
+      "completed": true,
+      "priority": "important",
+      "color": "mint",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-04-13T08:00:00.000Z",
+      "updatedAt": "2026-04-13T06:29:25.537Z"
+    }
+  ]
+}
