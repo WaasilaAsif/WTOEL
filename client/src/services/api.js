@@ -25,5 +25,5 @@ export const api = {
   failFocus: (data) => request("/focus/fail", { method: "POST", body: JSON.stringify(data) }),
   completeFocus: (data) => request("/focus/complete", { method: "POST", body: JSON.stringify(data) }),
   getRewards: () => request("/rewards"),
-  spendReward: (rewardId) => request("/rewards/spend", { method: "POST", body: JSON.stringify({ rewardId }) }),
+  spendReward: (rewardId, taskId) => request("/rewards/spend", { method: "POST", body: JSON.stringify({ rewardId, taskId }) }),
 };

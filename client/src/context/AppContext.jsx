@@ -33,6 +33,15 @@ export function AppProvider({ children }) {
         setProfile(profileRes);
         setRewards(rewardsRes);
         setIsPlayMode(Boolean(profileRes.settings?.playMode));
+
+        // Auto-lock overdue tasks
+        const now = Date.now();
+        tasksRes.forEach((task) => {
+          const isTemporarilyUnlocked = task.unlockedUntil && new Date(task.unlockedUntil).getTime() > now;
+          if (!task.completed && task.dueAt && new Date(task.dueAt).getTime() < now && !task.locked && !isTemporarilyUnlocked) {
+            api.updateTask(task.id, { locked: true }).catch(() => {});
+          }
+        });
       } catch (err) {
         setError(err.message || "Unable to load app data.");
       } finally {
@@ -63,6 +72,21 @@ export function AppProvider({ children }) {
     const timer = setTimeout(() => setFocusFlash(false), 1200);
     return () => clearTimeout(timer);
   }, [focusFlash]);
+
+  // Periodic check for overdue tasks (every minute)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = Date.now();
+      tasks.forEach((task) => {
+        const isTemporarilyUnlocked = task.unlockedUntil && new Date(task.unlockedUntil).getTime() > now;
+        if (!task.completed && task.dueAt && new Date(task.dueAt).getTime() < now && !task.locked && !isTemporarilyUnlocked) {
+          api.updateTask(task.id, { locked: true }).catch(() => {});
+        }
+      });
+    }, 60000); // Check every minute
+
+    return () => clearInterval(interval);
+  }, [tasks]);
 
   async function createTask(payload) {
     const task = await api.createTask(payload);
@@ -102,8 +126,13 @@ export function AppProvider({ children }) {
   }
 
   async function failFocus(reason) {
-    const next = await api.failFocus({ reason });
+    setFocusFlash(true);
+    const taskId = profile?.focusSession?.taskId || null;
+    const next = await api.failFocus({ reason, taskId });
     setProfile(next);
+    // Refresh tasks to reflect the newly locked task
+    const taskRes = await api.getTasks();
+    setTasks(taskRes);
   }
 
   async function completeFocus(taskId) {
@@ -114,10 +143,21 @@ export function AppProvider({ children }) {
     triggerBeatDrop(2.1);
   }
 
-  async function spendPoints(rewardId) {
-    const next = await api.spendReward(rewardId);
+  async function spendPoints(rewardId, taskId = null) {
+    const next = await api.spendReward(rewardId, taskId);
     setProfile(next.profile);
     setRewards(next.rewards);
+    
+    // Refresh tasks if unlock-task was used
+    if (rewardId === "unlock-task") {
+      const taskRes = await api.getTasks();
+      setTasks(taskRes);
+    }
+    
+    // Show feedback for immediate reward effects
+    if (rewardId === "revive-streak") {
+      triggerBeatDrop(1.5);
+    }
   }
 
   async function toggleMode() {
@@ -146,7 +186,7 @@ export function AppProvider({ children }) {
     if (selectedList === "Completed") return tasks.filter((task) => task.completed);
     if (selectedList === "Important") return tasks.filter((task) => task.priority === "important" && !task.completed);
     if (selectedList === "Locked") return tasks.filter((task) => task.locked && !task.completed);
-    if (selectedList === "Scheduled") return tasks.filter((task) => task.dueAt && !task.completed);
+    if (selectedList === "Scheduled") return tasks.filter((task) => (task.list === "Scheduled" || task.dueAt) && !task.completed);
     return tasks.filter((task) => task.list === selectedList && !task.completed);
   }, [selectedList, tasks]);
 

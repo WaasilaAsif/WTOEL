@@ -5,6 +5,23 @@ const TASKS_FILE = "tasks.json";
 
 async function listTasks() {
   const { tasks } = await readJson(TASKS_FILE);
+  const now = Date.now();
+  let updated = false;
+
+  // Auto-lock overdue tasks (unless temporarily unlocked)
+  tasks.forEach((task) => {
+    const isTemporarilyUnlocked = task.unlockedUntil && new Date(task.unlockedUntil).getTime() > now;
+    if (!task.completed && task.dueAt && new Date(task.dueAt).getTime() < now && !task.locked && !isTemporarilyUnlocked) {
+      task.locked = true;
+      task.updatedAt = new Date().toISOString();
+      updated = true;
+    }
+  });
+
+  if (updated) {
+    await writeJson(TASKS_FILE, { tasks });
+  }
+
   return tasks.sort((a, b) => {
     if (a.priority === "important" && b.priority !== "important") return -1;
     if (a.priority !== "important" && b.priority === "important") return 1;

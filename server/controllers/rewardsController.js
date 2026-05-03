@@ -7,7 +7,7 @@ async function getRewardsController(_req, res) {
 
 async function spendRewardsController(req, res) {
   try {
-    const result = await spendReward(req.body.rewardId);
+    const result = await spendReward(req.body.rewardId, req.body.taskId);
     res.json(result);
   } catch (error) {
     res.status(400).json({ message: error.message });

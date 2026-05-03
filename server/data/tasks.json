@@ -1,6 +1,59 @@
 {
   "tasks": [
     {
+      "id": "408a5e3a-0817-4f8a-b5b9-648ec8cfb0e9",
+      "title": "task3",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "important",
+      "color": "sage",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-05-03T12:00:31.477Z",
+      "updatedAt": "2026-05-03T12:00:34.759Z"
+    },
+    {
+      "id": "67f0f30b-c13f-497d-9469-07222b2f93f3",
+      "title": "task2",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "important",
+      "color": "sage",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-05-03T12:00:22.671Z",
+      "updatedAt": "2026-05-03T12:00:26.450Z"
+    },
+    {
+      "id": "3ff02b27-f4ae-417a-afca-9e91913d92fe",
+      "title": "task",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "normal",
+      "color": "sage",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-05-03T11:58:36.341Z",
+      "updatedAt": "2026-05-03T11:58:40.027Z"
+    },
+    {
+      "id": "37b7c552-94c0-4689-814c-8f1f7fb63c50",
+      "title": "task",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "important",
+      "color": "sky",
+      "dueAt": "2026-05-03T16:54",
+      "locked": false,
+      "createdAt": "2026-05-03T11:53:28.315Z",
+      "updatedAt": "2026-05-03T12:00:48.919Z",
+      "unlockedUntil": "2026-05-03T13:00:42.021Z"
+    },
+    {
       "id": "a1351d70-5c9b-43ff-8be1-0148cd9790a4",
       "title": "New task",
       "notes": "",
@@ -50,7 +103,7 @@
       "dueAt": null,
       "locked": false,
       "createdAt": "2026-04-13T08:00:00.000Z",
-      "updatedAt": "2026-04-13T06:29:25.537Z"
+      "updatedAt": "2026-05-03T11:52:06.394Z"
     }
   ]
 }

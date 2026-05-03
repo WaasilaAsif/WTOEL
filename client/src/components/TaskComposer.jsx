@@ -53,6 +53,7 @@ export function TaskComposer() {
           type="datetime-local"
           value={dueAt}
           onChange={(event) => setDueAt(event.target.value)}
+          required={selectedList === "Scheduled"}
           className="h-10 rounded-xl border border-green-200 bg-white px-3 text-xs text-slate-800 outline-none"
         />
         <select

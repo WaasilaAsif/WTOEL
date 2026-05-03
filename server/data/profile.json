@@ -1,17 +1,18 @@
 {
   "name": "Luma Learner",
-  "points": 30,
-  "xp": 215,
+  "points": 50,
+  "xp": 660,
   "level": 2,
   "title": "Chaos Slayer",
   "streaks": {
-    "daily": 0,
+    "daily": 1,
     "focus": 0,
-    "noFail": 0,
+    "noFail": 1,
     "combo": 1
   },
   "badges": [
-    "First Light"
+    "First Light",
+    "Deep Worker"
   ],
   "titlesUnlocked": [
     "Productivity Goblin",
@@ -20,21 +21,24 @@
   ],
   "avatarMood": "sad",
   "recentWins": [
-    "Completed: New task",
-    "Focus failed: Tab switched",
-    "Completed: Complete ADBMS Assignment",
-    "Completed: Hello World",
-    "Completed: Welcome to LumaTasks"
+    "Completed: task",
+    "Completed: task3",
+    "Completed: task2",
+    "Completed: task",
+    "Completed: task",
+    "Completed: Welcome to LumaTasks",
+    "Completed: test task",
+    "Focus failed: Manual fail"
   ],
   "settings": {
     "soundEnabled": true,
-    "playMode": false
+    "playMode": true
   },
   "focusSession": null,
   "stats": {
-    "tasksCompleted": 4,
-    "taskVelocity": 4,
-    "completionRate": 57
+    "tasksCompleted": 20,
+    "taskVelocity": 12,
+    "completionRate": 87
   },
   "nextLevelXp": 1080
 }

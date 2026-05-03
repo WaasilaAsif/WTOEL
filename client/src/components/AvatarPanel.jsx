@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 const moodMessages = {
   waving: "Hello diva",
   excited: "Boss mode activated.",
-  sleepy: "Someone's getting lazy",
   sad: "Focus broken.",
-  calm: "The grind respects you.",
 };
 
 export function AvatarPanel({ profile }) {

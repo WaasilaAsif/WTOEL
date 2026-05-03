@@ -18,8 +18,10 @@ async function startFocus({ taskId, durationMinutes }) {
   return profile;
 }
 
-async function failFocus({ reason = "Focus broken" }) {
+async function failFocus({ reason = "Focus broken", taskId = null }) {
   const profile = await getProfile();
+  const taskService = require("./taskService");
+  
   profile.focusSession = null;
   profile.streaks.focus = Math.max(0, profile.streaks.focus - 1);
   profile.streaks.combo = 1;
@@ -27,6 +29,12 @@ async function failFocus({ reason = "Focus broken" }) {
   profile.points = Math.max(0, profile.points - 10);
   profile.recentWins.unshift(`Focus failed: ${reason}`);
   profile.recentWins = profile.recentWins.slice(0, 8);
+  
+  // Auto-lock the task that was being focused on (as a penalty)
+  if (taskId) {
+    await taskService.updateTask(taskId, { locked: true });
+  }
+  
   await saveProfile(profile);
   return profile;
 }

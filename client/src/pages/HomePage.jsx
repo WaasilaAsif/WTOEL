@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FocusSession } from "../components/FocusSession";
 import { LampToggle } from "../components/LampToggle";
-import { PlayParticles } from "../components/PlayParticles";
 import { RewardShop } from "../components/RewardShop";
 import { Sidebar } from "../components/Sidebar";
 import { TaskComposer } from "../components/TaskComposer";
@@ -78,7 +77,6 @@ export function HomePage() {
           )}
         </>
       )}
-      <PlayParticles enabled={isPlayMode} />
 
       <div className="mx-auto max-w-7xl">
         <header className="mb-4 flex items-center justify-between gap-3">

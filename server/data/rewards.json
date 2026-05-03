@@ -1,14 +1,9 @@
 {
   "shop": [
     {
-      "id": "extension",
-      "name": "+5 min task extension",
-      "cost": 35
-    },
-    {
-      "id": "unlock-task",
-      "name": "Unlock locked task edit",
-      "cost": 30
+      "id": "revive-streak",
+      "name": "Revive failed streak",
+      "cost": 70
     },
     {
       "id": "reduce-focus",
@@ -16,32 +11,94 @@
       "cost": 25
     },
     {
-      "id": "revive-streak",
-      "name": "Revive failed streak",
-      "cost": 70
-    },
-    {
-      "id": "undo-delete",
-      "name": "Undo accidental task delete",
-      "cost": 20
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30
     },
     {
       "id": "skip-punishment",
-      "name": "Skip one punishment",
-      "cost": 45
+      "name": "Restore 10 points",
+      "cost": 15
     },
     {
-      "id": "badge-reroll",
-      "name": "Badge reroll",
-      "cost": 50
+      "id": "extension",
+      "name": "Bonus 50 points",
+      "cost": 25
+    }
+  ],
+  "inventory": [
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T12:00:42.026Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:58:51.631Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:56:59.408Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:56:40.207Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:56:10.813Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit (1h)",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:50:51.722Z"
+    },
+    {
+      "id": "reduce-focus",
+      "name": "Reduce focus session by 5 min",
+      "cost": 25,
+      "purchasedAt": "2026-05-03T11:50:16.197Z"
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit",
+      "cost": 30,
+      "purchasedAt": "2026-05-03T11:42:41.822Z"
     },
     {
       "id": "title-style",
       "name": "Title customization",
-      "cost": 60
-    }
-  ],
-  "inventory": [
+      "cost": 60,
+      "purchasedAt": "2026-05-03T11:42:09.024Z"
+    },
+    {
+      "id": "extension",
+      "name": "+5 min task extension",
+      "cost": 35,
+      "purchasedAt": "2026-05-03T11:41:37.900Z"
+    },
+    {
+      "id": "extension",
+      "name": "+5 min task extension",
+      "cost": 35,
+      "purchasedAt": "2026-05-03T11:41:30.662Z"
+    },
+    {
+      "id": "undo-delete",
+      "name": "Undo accidental task delete",
+      "cost": 20,
+      "purchasedAt": "2026-05-03T11:39:23.000Z"
+    },
     {
       "id": "unlock-task",
       "name": "Unlock locked task edit",
