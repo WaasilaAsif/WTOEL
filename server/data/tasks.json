@@ -1,6 +1,32 @@
 {
   "tasks": [
     {
+      "id": "a1351d70-5c9b-43ff-8be1-0148cd9790a4",
+      "title": "New task",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "normal",
+      "color": "sage",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-04-27T04:12:14.815Z",
+      "updatedAt": "2026-04-27T04:44:06.637Z"
+    },
+    {
+      "id": "81aabb6e-119c-4bba-8d57-8fc7b061bd0a",
+      "title": "Complete ADBMS Assignment",
+      "notes": "",
+      "list": "My Day",
+      "completed": true,
+      "priority": "normal",
+      "color": "sage",
+      "dueAt": null,
+      "locked": false,
+      "createdAt": "2026-04-27T04:05:02.486Z",
+      "updatedAt": "2026-04-27T04:05:48.277Z"
+    },
+    {
       "id": "166432dd-3e83-414e-bc0b-b9ef14757f4a",
       "title": "Hello World",
       "notes": "",

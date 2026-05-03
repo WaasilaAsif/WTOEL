@@ -4,7 +4,7 @@ import { useApp } from "../context/AppContext";
 const colors = ["sage", "mint", "sand", "peach", "sky"];
 
 export function TaskComposer() {
-  const { createTask, selectedList } = useApp();
+  const { createTask, selectedList, isPlayMode } = useApp();
   const [title, setTitle] = useState("");
   const [dueAt, setDueAt] = useState("");
   const [priority, setPriority] = useState("normal");
@@ -29,12 +29,15 @@ export function TaskComposer() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-3xl bg-paper p-3 shadow-soft">
+    <form
+      onSubmit={submit}
+      className={`rounded-3xl bg-paper p-3 shadow-soft ${isPlayMode ? "text-slate-800" : "text-slate-700"}`}
+    >
       <div className="flex flex-col gap-2 sm:flex-row">
         <input
           value={title}
           onChange={(event) => setTitle(event.target.value)}
-          className="h-11 flex-1 rounded-2xl border border-green-200 px-3 text-sm outline-none transition focus:border-mint-600"
+          className="h-11 flex-1 rounded-2xl border border-green-200 bg-white px-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-mint-600"
           placeholder="Add a luminous task"
         />
         <button
@@ -50,18 +53,18 @@ export function TaskComposer() {
           type="datetime-local"
           value={dueAt}
           onChange={(event) => setDueAt(event.target.value)}
-          className="h-10 rounded-xl border border-green-200 px-3 text-xs outline-none"
+          className="h-10 rounded-xl border border-green-200 bg-white px-3 text-xs text-slate-800 outline-none"
         />
         <select
           value={priority}
           onChange={(event) => setPriority(event.target.value)}
-          className="h-10 rounded-xl border border-green-200 px-3 text-xs outline-none"
+          className="h-10 rounded-xl border border-green-200 bg-white px-3 text-xs text-slate-800 outline-none"
         >
           <option value="normal">Normal</option>
           <option value="important">Important</option>
         </select>
 
-        <div className="flex items-center gap-2 rounded-xl border border-green-200 px-3">
+        <div className="flex items-center gap-2 rounded-xl border border-green-200 bg-white px-3">
           {colors.map((swatch) => (
             <button
               key={swatch}

@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { useApp } from "../context/AppContext";
 
 export function FocusSession({ onSuccess, onFail }) {
-  const { filteredTasks, profile, startFocus, completeFocus } = useApp();
+  const { filteredTasks, profile, startFocus, completeFocus, isPlayMode } = useApp();
   const [taskId, setTaskId] = useState("");
   const [duration, setDuration] = useState(25);
 
@@ -14,7 +14,9 @@ export function FocusSession({ onSuccess, onFail }) {
   );
 
   return (
-    <section className="rounded-3xl bg-paper p-4 shadow-soft">
+    <section
+      className={`rounded-3xl bg-paper p-4 shadow-soft ${isPlayMode ? "text-slate-800" : "text-slate-700"}`}
+    >
       <h3 className="font-heading text-lg text-slate-800">Focus Session</h3>
       <p className="text-xs text-slate-500">Changing tabs instantly fails the session.</p>
 
@@ -23,7 +25,7 @@ export function FocusSession({ onSuccess, onFail }) {
           <select
             value={taskId}
             onChange={(event) => setTaskId(event.target.value)}
-            className="h-10 rounded-xl border border-green-200 px-3 text-xs"
+            className="h-10 rounded-xl border border-green-200 bg-white px-3 text-xs text-slate-800"
           >
             <option value="">Select task</option>
             {filteredTasks.map((task) => (
@@ -36,7 +38,7 @@ export function FocusSession({ onSuccess, onFail }) {
           <select
             value={duration}
             onChange={(event) => setDuration(Number(event.target.value))}
-            className="h-10 rounded-xl border border-green-200 px-3 text-xs"
+            className="h-10 rounded-xl border border-green-200 bg-white px-3 text-xs text-slate-800"
           >
             {[15, 20, 25, 35, 45].map((mins) => (
               <option key={mins} value={mins}>

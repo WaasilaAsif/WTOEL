@@ -1,7 +1,7 @@
 {
   "name": "Luma Learner",
-  "points": 85,
-  "xp": 175,
+  "points": 30,
+  "xp": 215,
   "level": 2,
   "title": "Chaos Slayer",
   "streaks": {
@@ -18,20 +18,23 @@
     "Focus Witch",
     "Chaos Slayer"
   ],
-  "avatarMood": "waving",
+  "avatarMood": "sad",
   "recentWins": [
+    "Completed: New task",
+    "Focus failed: Tab switched",
+    "Completed: Complete ADBMS Assignment",
     "Completed: Hello World",
     "Completed: Welcome to LumaTasks"
   ],
   "settings": {
     "soundEnabled": true,
-    "playMode": true
+    "playMode": false
   },
   "focusSession": null,
   "stats": {
-    "tasksCompleted": 2,
-    "taskVelocity": 2,
-    "completionRate": 40
+    "tasksCompleted": 4,
+    "taskVelocity": 4,
+    "completionRate": 57
   },
   "nextLevelXp": 1080
 }

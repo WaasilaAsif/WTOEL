@@ -1,13 +1,58 @@
 {
   "shop": [
-    { "id": "extension", "name": "+5 min task extension", "cost": 35 },
-    { "id": "unlock-task", "name": "Unlock locked task edit", "cost": 30 },
-    { "id": "reduce-focus", "name": "Reduce focus session by 5 min", "cost": 25 },
-    { "id": "revive-streak", "name": "Revive failed streak", "cost": 70 },
-    { "id": "undo-delete", "name": "Undo accidental task delete", "cost": 20 },
-    { "id": "skip-punishment", "name": "Skip one punishment", "cost": 45 },
-    { "id": "badge-reroll", "name": "Badge reroll", "cost": 50 },
-    { "id": "title-style", "name": "Title customization", "cost": 60 }
+    {
+      "id": "extension",
+      "name": "+5 min task extension",
+      "cost": 35
+    },
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit",
+      "cost": 30
+    },
+    {
+      "id": "reduce-focus",
+      "name": "Reduce focus session by 5 min",
+      "cost": 25
+    },
+    {
+      "id": "revive-streak",
+      "name": "Revive failed streak",
+      "cost": 70
+    },
+    {
+      "id": "undo-delete",
+      "name": "Undo accidental task delete",
+      "cost": 20
+    },
+    {
+      "id": "skip-punishment",
+      "name": "Skip one punishment",
+      "cost": 45
+    },
+    {
+      "id": "badge-reroll",
+      "name": "Badge reroll",
+      "cost": 50
+    },
+    {
+      "id": "title-style",
+      "name": "Title customization",
+      "cost": 60
+    }
   ],
-  "inventory": []
+  "inventory": [
+    {
+      "id": "unlock-task",
+      "name": "Unlock locked task edit",
+      "cost": 30,
+      "purchasedAt": "2026-04-27T04:40:10.437Z"
+    },
+    {
+      "id": "extension",
+      "name": "+5 min task extension",
+      "cost": 35,
+      "purchasedAt": "2026-04-27T04:12:42.813Z"
+    }
+  ]
 }

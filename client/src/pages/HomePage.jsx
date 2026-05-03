@@ -54,10 +54,10 @@ export function HomePage() {
       <LampToggle isPlayMode={isPlayMode} onToggle={toggleMode} mood={mood} />
       {isPlayMode && (
         <>
-          <div className="play-mode-aura" />
-          <div className="play-beam play-beam-a" />
-          <div className="play-beam play-beam-b" />
-          <div className="dance-floor-grid" />
+          <div className="pointer-events-none play-mode-aura" />
+          <div className="pointer-events-none play-beam play-beam-a" />
+          <div className="pointer-events-none play-beam play-beam-b" />
+          <div className="pointer-events-none dance-floor-grid" />
           {beatDrop.tick > 0 && (
             <>
               <motion.div
